@@ -33,6 +33,7 @@ export const sortDataByDate = (data, state) => {
     if (newData[date].delta.recovered)
       recoveredDaily.unshift(newData[date].delta.recovered);
     else recoveredDaily.unshift(0);
+    return null;
   });
   // let newDates = dates.reverse()
   return {
@@ -63,6 +64,7 @@ export const sortDataByState = (data) => {
       stateDataArr.push(tempObj);
       stateCodeArr.push(state);
     }
+    return null;
   });
   return { stateDataArr, stateCodeArr };
 };
@@ -80,6 +82,7 @@ export const sortDataByDistricts = (data, stateId) => {
     if (!tempObj[district]["recovered"]) tempObj[district]["recovered"] = 0;
     districtsCodeArr.push(district);
     districtsDataArr.push(tempObj);
+    return null;
   });
   return { districtsDataArr, districtsCodeArr };
 };

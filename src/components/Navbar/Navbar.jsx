@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./Navbar.module.css";
 
 import { Link, useLocation } from "react-router-dom";
@@ -61,16 +61,17 @@ const Navbar = (props) => {
         <div className={styles.bottomGrp}>
           <div className={styles.intro}>
             <span style={{ color: DARK_THEME.label }}>
-              Made with ❤️ By Shivam Mundhra
+              Made with{" "}
+              <span role="img" aria-label="love">
+                ❤️
+              </span>{" "}
+              By Shivam Mundhra
             </span>
             <div className={styles.linkGrp}>
-              <a href="https://github.com/ShivamMundhra" target="_blank">
+              <a href="https://github.com/ShivamMundhra">
                 <Icon.GitHub style={{ stroke: "#fff" }} />
               </a>
-              <a
-                href="https://www.linkedin.com/in/shivam-mundhra-350522173/"
-                target="_blank"
-              >
+              <a href="https://www.linkedin.com/in/shivam-mundhra-350522173/">
                 <Icon.Linkedin style={{ stroke: "#fff" }} />
               </a>
             </div>

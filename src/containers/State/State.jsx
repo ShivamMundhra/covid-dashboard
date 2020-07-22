@@ -14,7 +14,7 @@ import { COMMON_THEME, DARK_THEME, STATE_NAMES } from "../../utils/constants";
 const State = (props) => {
   const stateId = useParams().stateId.toUpperCase();
   const [data, setData] = useState(null);
-  const [timeSeries, setTimeSeries] = useState(null);
+  // const [timeSeries, setTimeSeries] = useState(null);
   const [sortedData, setSortedData] = useState(null);
   const [districtData, setDistrictData] = useState(null);
   const [showDaily, setShowDaily] = useState(true);
@@ -33,7 +33,7 @@ const State = (props) => {
       setDistrictData(stateDa.districtsDataArr);
       setDistrictCodes(stateDa.districtsCodeArr);
       setData(data);
-      setTimeSeries(timeSeries);
+      // setTimeSeries(timeSeries);
       setSortedData(sortedData);
     };
     try {
@@ -41,7 +41,7 @@ const State = (props) => {
     } catch (error) {
       console.log(error);
     }
-  }, []);
+  }, [stateId]);
   // const handleClick = () => {
   //   console.log(timeSeries);
   //   console.log(data);

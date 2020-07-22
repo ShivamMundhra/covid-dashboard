@@ -10,8 +10,8 @@ import { sortDataByDate, sortDataByState } from "../../utils/helperFunctions";
 import { COMMON_THEME, DARK_THEME, STATE_NAMES } from "../../utils/constants";
 
 const Home = (props) => {
-  const [data, setData] = useState(null);
-  const [timeSeries, setTimeSeries] = useState(null);
+  // const [data, setData] = useState(null);
+  // const [timeSeries, setTimeSeries] = useState(null);
   const [sortedData, setSortedData] = useState(null);
   const [stateData, setStateData] = useState(null);
   const [showDaily, setShowDaily] = useState(true);
@@ -29,8 +29,8 @@ const Home = (props) => {
       const stateDa = sortDataByState(data);
       setStateData(stateDa.stateDataArr);
       setStateCodes(stateDa.stateCodeArr);
-      setData(data);
-      setTimeSeries(timeSeries);
+      // setData(data);
+      // setTimeSeries(timeSeries);
       setSortedData(sortedData);
     };
     try {
@@ -86,6 +86,7 @@ const Home = (props) => {
                 <Link
                   to={`/state/${stateCodes[i]}`}
                   className={`${i % 2 === 0 ? styles.rowEven : styles.rowOdd}`}
+                  key={`${i}-state-${i}`}
                 >
                   <div className={styles.Name}>
                     {STATE_NAMES[stateCodes[i]]}

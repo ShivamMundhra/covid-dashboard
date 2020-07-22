@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 
 import styles from "./Guide.module.css";
 import * as Icon from "react-feather";
@@ -28,19 +28,20 @@ const Guide = (props) => {
       text: "Avoid public places if possible",
     },
   ];
+  const [cardNo, setCardNo] = useState(0);
+  const increment = useCallback(() => {
+    setCardNo((cardNo) => (cardNo + 1) % cardData.length);
+  }, [cardData.length]);
+  const decrement = () => {
+    setCardNo((cardNo) => (cardNo + cardData.length - 1) % cardData.length);
+  };
   useEffect(() => {
     const interval = setInterval(() => {
       increment();
     }, 6000);
     return () => clearInterval(interval);
-  }, []);
-  const [cardNo, setCardNo] = useState(0);
-  const increment = () => {
-    setCardNo((cardNo) => (cardNo + 1) % cardData.length);
-  };
-  const decrement = () => {
-    setCardNo((cardNo) => (cardNo + cardData.length - 1) % cardData.length);
-  };
+  }, [increment]);
+
   const renderCard = (cardNo) => {
     return (
       <div className={styles.cardWrapper}>
