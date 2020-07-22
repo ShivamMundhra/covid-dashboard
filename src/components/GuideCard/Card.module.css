@@ -1,0 +1,19 @@
+.Card {
+  width: max-content;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 30px 30px 30px;
+}
+
+.lottieBox {
+  width: 35vw;
+  height: 35vw;
+}
+
+.text {
+  margin-top: 20px;
+  font-size: 1.6vw;
+  color: #fff;
+}

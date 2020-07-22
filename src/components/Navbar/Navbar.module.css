@@ -1,0 +1,152 @@
+.Navbar {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  min-height: 500px;
+  align-items: center;
+  /* background-image: linear-gradient(to bottom, #ed5a91 0%, #ec3832 100%); */
+  transition: width 0.3s ease-in-out;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  /* position: relative; */
+  z-index: 10;
+}
+
+.Navbar.openNav {
+  width: 200px;
+  transition: width 0.3s ease-in-out;
+}
+
+.menu {
+  position: absolute;
+  top: 10px;
+  right: 50%;
+  transform: translateX(50%);
+  cursor: pointer;
+}
+
+.Title {
+  opacity: 0;
+  transform: translateX(-200%);
+  /* color: #fff; */
+  font-size: 31px;
+  margin-top: 60px;
+  font-weight: 600;
+  transition: opacity 0.3s ease-in-out;
+  transition: transform 0.4s ease-in-out;
+  width: 100%;
+  text-align: center;
+}
+.openNav .Title {
+  transform: translateX(0);
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+  transition: transform 0.32s ease-in-out;
+}
+
+.middleGrp {
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.bottomGrp {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.iconWrapper {
+  margin: 10px 0;
+  width: 100%;
+}
+
+.iconWrapper a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.Navbar .link {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-200%);
+  width: 0;
+}
+
+.openNav .link {
+  opacity: 1;
+  visibility: visible;
+  width: max-content;
+  transform: translateX(0%);
+  transition: all 0.3s ease-in-out;
+}
+
+.Navbar .linkIcon {
+  position: absolute;
+  left: 50px;
+  transform: translateX(-50%);
+}
+
+.bottomGrp a {
+  text-decoration: none;
+}
+
+.Navbar .intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.Navbar .intro span {
+  width: 80%;
+  text-align: center;
+  font-size: 18px;
+}
+
+.linkGrp {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  width: 80%;
+}
+
+.openNav .intro {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.3s ease-in-out;
+}
+
+.backdrop {
+  width: 100vw;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* opacity: 0.8; */
+  transform: translateX(-100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.2s ease-out;
+  z-index: 5;
+}
+.showBackdrop {
+  transform: translateX(0%);
+  transition: transform 0.2s ease-out;
+}
+
+.w {
+  cursor: pointer;
+}
